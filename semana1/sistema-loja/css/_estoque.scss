@@ -1,0 +1,19 @@
+@import "mixins";
+
+.section-estoque {
+  img {
+    width: 105px;
+    height: 105px;
+  }
+  table {
+    padding: 50px 0px;
+  }
+  th {
+    color: $branco;
+  }
+  td {
+    padding: 50px 20px;
+    color: $branco;
+    border: solid $branco 1px;
+  }
+}

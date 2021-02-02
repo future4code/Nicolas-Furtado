@@ -1,0 +1,13 @@
+@import "mixins";
+
+.section-funcionarios {
+    text-align: center;
+    ul{
+        padding: 0px;
+    }
+    li{
+        
+        list-style: none;
+        color: $branco;
+    }
+}
