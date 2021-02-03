@@ -1,0 +1,21 @@
+//mixin display flex
+@mixin display_f($align, $justify) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin botao_a($cor, $cor-borda) {
+  transition: 1s;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  width: 180px;
+  height: 70px;
+  background-color: $cor;
+  &:hover {
+    transition: 300ms;
+    box-shadow: $cor-borda 0px 0px 10px;
+  }
+}

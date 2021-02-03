@@ -1,0 +1,15 @@
+@import "mixins";
+
+.section-produto {
+form {
+    text-align: center;
+}
+  label{
+      color: $branco;
+      display: block;
+  }
+  button{
+    margin: 10px;
+    @include botao_a($branco, $azul);
+  }
+}

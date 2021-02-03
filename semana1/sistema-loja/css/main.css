@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap");
+* {
+  text-decoration: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0px;
+  font-family: "Yusei Magic", sans-serif;
+  color: #292f36;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html body,
+body body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #292f36;
+}
+
+header {
+  background-color: #4ecdc4;
+  height: 150px;
+  -webkit-box-shadow: black 0px 3px 15px;
+          box-shadow: black 0px 3px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+header h1 {
+  text-transform: uppercase;
+}
+
+header img {
+  width: 50px;
+  height: 50px;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #4ecdc4;
+  height: 50px;
+  -webkit-box-shadow: black 0px 3px 15px;
+          box-shadow: black 0px 3px 15px;
+}
+
+footer a {
+  padding-right: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+footer img {
+  width: 20px;
+  height: 20px;
+}
+
+footer .credits {
+  width: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.section-principal {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.section-principal a {
+  -webkit-transition: 1s;
+  transition: 1s;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  width: 180px;
+  height: 70px;
+  background-color: #fff;
+}
+
+.section-principal a:hover {
+  -webkit-transition: 300ms;
+  transition: 300ms;
+  -webkit-box-shadow: #4ecdc4 0px 0px 10px;
+          box-shadow: #4ecdc4 0px 0px 10px;
+}
+
+.section-funcionarios {
+  text-align: center;
+}
+
+.section-funcionarios ul {
+  padding: 0px;
+}
+
+.section-funcionarios li {
+  list-style: none;
+  color: #fff;
+}
+
+.section-estoque img {
+  width: 105px;
+  height: 105px;
+}
+
+.section-estoque table {
+  padding: 50px 0px;
+}
+
+.section-estoque th {
+  color: #fff;
+}
+
+.section-estoque td {
+  padding: 50px 20px;
+  color: #fff;
+  border: solid #fff 1px;
+}
+
+.section-produto form {
+  text-align: center;
+}
+
+.section-produto label {
+  color: #fff;
+  display: block;
+}
+
+.section-produto button {
+  margin: 10px;
+  -webkit-transition: 1s;
+  transition: 1s;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  width: 180px;
+  height: 70px;
+  background-color: #fff;
+}
+
+.section-produto button:hover {
+  -webkit-transition: 300ms;
+  transition: 300ms;
+  -webkit-box-shadow: #4ecdc4 0px 0px 10px;
+          box-shadow: #4ecdc4 0px 0px 10px;
+}

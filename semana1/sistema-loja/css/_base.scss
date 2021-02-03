@@ -1,0 +1,75 @@
+@import "mixins";
+
+// Fonte
+@import url("https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap");
+$fonte: "Yusei Magic", sans-serif;
+
+// Cores
+$azul: #4ecdc4;
+$vermelho: #ff6b6b;
+$preto: #292f36;
+$branco: #fff;
+
+//
+* {
+  text-decoration: none;
+  box-sizing: border-box;
+  margin: 0px;
+  font-family: $fonte;
+  color: #292f36;
+}
+html,
+body {
+  height: 100%;
+  body {
+    display: flex;
+    flex-direction: column;
+    background-color: $preto;
+  }
+}
+
+header {
+  background-color: $azul;
+  height: 150px;
+  box-shadow: black 0px 3px 15px;
+  @include display_f(center, center);
+  flex-direction: column;
+  h1 {
+    text-transform: uppercase;
+  }
+  img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  background-color: $azul;
+  height: 50px;
+  box-shadow: black 0px 3px 15px;
+  a {
+      padding-right: 15px;
+      @include display_f(center, center);
+      flex-direction: column;
+  }
+  img {
+    width: 20px;
+    height: 20px;
+  }
+  .credits {
+    width: 250px;
+    @include display_f(center, center);
+    flex-direction: column;
+  }
+}
+
+.section-principal {
+  flex: 1;
+  @include display_f(center, center);
+  a {
+    @include botao_a($branco, $azul);
+  }
+}
