@@ -1,19 +1,30 @@
 @import "mixins";
 
 .section-estoque {
+  flex-direction: column;
   img {
-    width: 105px;
-    height: 105px;
+    width: 100px;
+    height: 100px;
+    margin-bottom: -5px;
   }
   table {
-    padding: 50px 0px;
-  }
-  th {
-    color: $branco;
-  }
-  td {
-    padding: 50px 20px;
-    color: $branco;
-    border: solid $branco 1px;
+    background-color: $branco;
+    border-collapse: collapse;
+    th {
+    }
+    td:first-of-type {
+      padding: 0px;
+    }
+    td {
+      padding: 0px 20px;
+      border: solid $preto 1px;
+      a {
+        img {
+          transform: rotate(180deg);
+          width: 25px;
+          height: 25px;
+        }
+      }
+    }
   }
 }

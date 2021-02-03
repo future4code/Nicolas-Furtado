@@ -110,6 +110,7 @@ footer .credits {
 }
 
 .section-principal {
+  padding: 50px;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -124,7 +125,7 @@ footer .credits {
           justify-content: center;
 }
 
-.section-principal a {
+.section-principal a.btn {
   -webkit-transition: 1s;
   transition: 1s;
   display: -webkit-inline-box;
@@ -142,7 +143,7 @@ footer .credits {
   background-color: #fff;
 }
 
-.section-principal a:hover {
+.section-principal a.btn:hover {
   -webkit-transition: 300ms;
   transition: 300ms;
   -webkit-box-shadow: #4ecdc4 0px 0px 10px;
@@ -162,23 +163,38 @@ footer .credits {
   color: #fff;
 }
 
+.section-estoque {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .section-estoque img {
-  width: 105px;
-  height: 105px;
+  width: 100px;
+  height: 100px;
+  margin-bottom: -5px;
 }
 
 .section-estoque table {
-  padding: 50px 0px;
+  background-color: #fff;
+  border-collapse: collapse;
 }
 
-.section-estoque th {
-  color: #fff;
+.section-estoque table td:first-of-type {
+  padding: 0px;
 }
 
-.section-estoque td {
-  padding: 50px 20px;
-  color: #fff;
-  border: solid #fff 1px;
+.section-estoque table td {
+  padding: 0px 20px;
+  border: solid #292f36 1px;
+}
+
+.section-estoque table td a img {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  width: 25px;
+  height: 25px;
 }
 
 .section-produto form {
@@ -214,4 +230,105 @@ footer .credits {
   transition: 300ms;
   -webkit-box-shadow: #4ecdc4 0px 0px 10px;
           box-shadow: #4ecdc4 0px 0px 10px;
+}
+
+.fundo {
+  background-color: #dadada;
+  outline: #fff solid 5px;
+  height: 630px;
+  width: 700px;
+  -webkit-box-shadow: black 1px 10px 50px;
+          box-shadow: black 1px 10px 50px;
+}
+
+.fundo nav {
+  background-color: #fff;
+  padding: 30px;
+  font-size: 13px;
+}
+
+.fundo .fundo-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 88%;
+  width: 100%;
+}
+
+.fundo .fundo-content div.pagamento {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.fundo .fundo-content div.pagamento form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 250px;
+}
+
+.fundo .fundo-content div.pagamento form input, .fundo .fundo-content div.pagamento form .pagamento {
+  margin-bottom: 20px;
+}
+
+.fundo .fundo-content div.pagamento form .pagamento-radio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.fundo .fundo-content div.lista {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #fff;
+  outline: #999 1px solid;
+  margin: 100px 50px;
+}
+
+.fundo .fundo-content div.lista .lista-produtos {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  outline: #999 1px solid;
+}
+
+.section-historico form {
+  padding-top: 50px;
 }
