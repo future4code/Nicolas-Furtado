@@ -106,6 +106,16 @@ td img {
     font-size: 60px;
 }
 
+.container-da-tabela{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.container-da-tabela > div{
+    padding-top: 200px;
+}
+
 
 /**
   *
