@@ -9,6 +9,7 @@ $azul: #4ecdc4;
 $vermelho: #ff6b6b;
 $preto: #292f36;
 $branco: #fff;
+$cinza: rgb(218, 218, 218);
 
 //
 * {
@@ -67,9 +68,10 @@ footer {
 }
 
 .section-principal {
+  padding: 50px;
   flex: 1;
   @include display_f(center, center);
-  a {
+  a.btn {
     @include botao_a($branco, $azul);
   }
 }

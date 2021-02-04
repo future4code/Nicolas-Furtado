@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Finalizar compra</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <header>
+      <img src="./img/logo.png" alt="logotipo" />
+      <h1>Fim do arco-íris</h1>
+    </header>
+
+    <section class="section-principal section-vendas">
+      <div class="fundo">
+        <nav>FINALIZAR A COMPRA</nav>
+        <div class="fundo-content">
+          <div class="pagamento">
+            <form action="">
+              <label for="cliente">Nome do cliente</label>
+              <input type="text" name="cliente" />
+              <label for="cpf">CPF</label>
+              <input type="text" name="cpf" />
+              <label for="radio">Tipo de pagamento</label>
+              <div class="pagamento-radio">
+                <div>
+                  <input
+                    type="radio"
+                    id="cartao"
+                    value="Crédito/Débito"
+                    name="pagamento"
+                  />Crédito/Débito
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="boleto"
+                    value="Boleto"
+                    name="pagamento"
+                  />Boleto
+                </div>
+              </div>
+
+              <button type="submit">Finalizar</button>
+            </form>
+          </div>
+          <div class="lista">
+            <div class="titulo-lista">Carrinho</div>
+            <div class="lista-produtos">
+                <p>Produto 2</p>
+                <p>Produto 1</p>
+                <p>Produto 3</p>
+                <p>Produto 4</p>
+                <p>Produto 5</p>
+            </div>
+            <div class="preco">Valor total: 79,40$</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="credits">
+        <p>Siga-nos nas redes sociais!</p>
+        <div>
+          <img src="https://image.flaticon.com/icons/png/512/25/25305.png" />
+          <img src="https://image.flaticon.com/icons/png/512/25/25425.png" />
+          <img src="https://image.flaticon.com/icons/png/512/8/8800.png" />
+        </div>
+      </div>
+      <a href="./ctrl-estoque.html">
+        voltar<img src="./img/back-arrow.png" alt="seta pra voltar" />
+      </a>
+    </footer>
+  </body>
+</html>

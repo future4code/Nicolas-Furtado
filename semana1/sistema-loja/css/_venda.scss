@@ -1,0 +1,55 @@
+@import 'mixins';
+
+.fundo {
+    nav {
+        background-color: $branco;
+        padding: 30px;
+        font-size: 13px;
+    }
+    background-color: $cinza;
+    outline: $branco solid 5px;
+    height: 630px;
+    width: 700px;
+    box-shadow: black 1px 10px 50px;
+  
+    .fundo-content{
+        display: flex;
+        height: 88%;
+        width: 100%;
+        div.pagamento{
+            flex: 1;
+            @include display_f(center,center);
+            form{
+                display: flex;
+                flex-direction: column;
+                width: 250px;
+                input, .pagamento {
+                    margin-bottom: 20px;
+                }
+                .pagamento-radio {
+                    display: flex;
+                    justify-content: space-around;
+                    
+                }
+            }
+        }
+        div.lista {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background-color: $branco;
+            outline: #999 1px solid;
+            margin: 100px 50px;
+            .titulo-lista{
+            }
+            .lista-produtos{
+                flex: 1;
+                @include display_f(center,center);
+                flex-direction: column;
+                outline: #999 1px solid;
+            }
+            .preco{
+            }
+        }
+    }
+}
