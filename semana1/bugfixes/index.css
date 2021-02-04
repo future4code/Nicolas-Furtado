@@ -84,13 +84,17 @@ td img {
     color: white;
     padding-top: 50px;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 #container-de-descricao > p{
     display: inline-block;
-    width: 180px;
+    width: 200px;
 }
 
 #container-de-descricao>ol {
+    display: inline-block;
     padding: 15px 0px;
 }
 
