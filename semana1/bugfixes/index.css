@@ -24,6 +24,9 @@ input {
 button:focus {
     color: white;
 }
+button:hover {
+    background-color: #e4c84f;
+}
 
 img {
     width: 100px;
