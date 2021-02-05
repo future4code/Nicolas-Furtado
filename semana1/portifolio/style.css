@@ -1,0 +1,477 @@
+@charset "UTF-8";
+/*
+*
+*---------> Mixins <----------
+*
+*/
+/*
+*
+*---------> Variaveis <----------
+*
+*/
+/*
+*
+*---------> Importando a fonte <----------
+*
+*/
+@font-face {
+  font-family: "Eurostile";
+  src: url("./fonts/eurostile.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*
+*
+*---------> Estilo geral <----------
+*
+*/
+* {
+  font-family: "Eurostile", sans-serif;
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+/*
+*
+*---------> Hero <----------
+*
+*/
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+}
+
+header nav {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 30px 30px;
+}
+
+header a.botao-regular {
+  margin: 0px 10px;
+  color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+}
+
+header a.botao-regular:hover {
+  outline: #6510d4 solid 2px;
+}
+
+header a.botao-solido {
+  background-color: #6510d4;
+  color: white;
+  padding: 10px;
+  border: #6510d4 solid 2px;
+  -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+          box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+header a.botao-solido:hover {
+  background-color: white;
+  color: #6510d4;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+header h1 {
+  color: #141c3a;
+  font-size: 45px;
+  font-weight: bolder;
+}
+
+header h2 {
+  font-weight: 100;
+  margin-top: 20px;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+header img {
+  margin-top: 100px;
+}
+
+header .down-arrow {
+  background-image: url("./img/arrow-regular.svg");
+  height: 50px;
+  width: 50px;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  margin-top: 100px;
+}
+
+header .down-arrow:hover {
+  background-image: url("./img/arrow-solid.svg");
+}
+
+/*
+*
+*---------> Sobre mim <----------
+*
+*/
+section#sobre-mim {
+  color: rgba(0, 0, 0, 0.9);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 70px;
+  background-color: #6510d4;
+}
+
+section#sobre-mim div {
+  background-color: white;
+  height: 400px;
+  width: 800px;
+  -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+          box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+}
+
+section#sobre-mim h3 {
+  padding: 50px;
+  text-align: center;
+}
+
+section#sobre-mim p {
+  font-size: 15px;
+  padding: 0px 80px;
+  text-align: center;
+  letter-spacing: 3px;
+  line-height: 1.5;
+}
+
+/*
+*
+*---------> Skills <----------
+*
+*/
+section#skills {
+  color: rgba(0, 0, 0, 0.9);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #6510d4;
+}
+
+section#skills h3 {
+  color: rgba(255, 255, 255, 0.9);
+  padding: 25px;
+  background-color: #6510d4;
+  text-align: center;
+}
+
+section#skills div.box {
+  background-color: white;
+  height: 500px;
+  width: 500px;
+  -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+          box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+  outline: solid white 1px;
+  margin: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+section#skills div.box div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 5px;
+  background-color: #6510d4;
+}
+
+section#skills div.box p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-width: 50%;
+  text-align: center;
+  border: 5px solid #6510d4;
+  background-color: white;
+}
+
+section#skills div.box p:hover {
+  color: #6510d4;
+}
+
+/*
+*
+*---------> Projetos <----------
+*
+*/
+section#projetos {
+  color: rgba(0, 0, 0, 0.9);
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  position: relative;
+}
+
+section#projetos h3 {
+  position: absolute;
+  top: 40px;
+  color: #141c3a;
+}
+
+section#projetos a .box {
+  background-color: #6510d4;
+  height: 300px;
+  width: 300px;
+  border-radius: 300px;
+  -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+          box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+
+section#projetos a .box h4 {
+  color: white;
+  font-weight: 100;
+  background-color: #6510d4;
+  padding: 10px;
+  -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+          box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+section#projetos a .box h4 span {
+  display: none;
+  margin-top: 10px;
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+section#projetos a .box img {
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+section#projetos a:hover h4 span {
+  display: inline-block;
+}
+
+section#projetos a:hover img {
+  -webkit-filter: none;
+          filter: none;
+}
+
+/*
+*
+*---------> Formação e Experiênciao <----------
+*
+*/
+section#historico {
+  position: relative;
+  padding-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 350px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+section#historico h3 {
+  position: absolute;
+  top: 70px;
+  color: #141c3a;
+}
+
+section#historico p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px;
+  font-size: 18px;
+}
+
+section#historico p span {
+  display: none;
+  font-size: 15px;
+}
+
+section#historico p:hover span {
+  display: block;
+}
+
+/*
+*
+*---------> Contato <----------
+*
+*/
+section#contato {
+  height: 600px;
+  background-color: #2c2f33;
+  color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 80px;
+}
+
+section#contato h3 {
+  position: absolute;
+  top: 40px;
+  font-weight: 100;
+  font-size: 40px;
+}
+
+section#contato form {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+section#contato form label {
+  padding-top: 15px;
+}
+
+section#contato form input {
+  padding: 10px;
+}
+
+section#contato form textarea {
+  padding: 10px;
+  resize: none;
+}
+
+section#contato form button {
+  margin: 20px;
+  background-color: #6510d4;
+  color: white;
+  padding: 10px;
+  border: #6510d4 solid 2px;
+  -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+          box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+section#contato form button:hover {
+  background-color: white;
+  color: #6510d4;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/*
+*
+*---------> Redes Sociais <----------
+*
+*/
+section#redes {
+  height: 100px;
+  background-color: #2c2f33;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section#redes img {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+}

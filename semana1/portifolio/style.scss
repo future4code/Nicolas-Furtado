@@ -1,0 +1,366 @@
+/*
+*
+*---------> Mixins <----------
+*
+*/
+@mixin box-style($color, $width, $height) {
+  background-color: $color;
+  height: $height;
+  width: $width;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+}
+@mixin circle-style($color, $tamanho) {
+  background-color: $color;
+  height: $tamanho;
+  width: $tamanho;
+  border-radius: $tamanho;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+}
+
+/*
+*
+*---------> Variaveis <----------
+*
+*/
+$azul-titulo: #141c3a;
+$roxo: #6510d4;
+$verde: greenyellow;
+
+/*
+*
+*---------> Importando a fonte <----------
+*
+*/
+@font-face {
+  font-family: "Eurostile";
+  src: url("./fonts/eurostile.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*
+*
+*---------> Estilo geral <----------
+*
+*/
+* {
+  font-family: "Eurostile", sans-serif;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+body,
+html {
+  height: 100%;
+}
+
+/*
+*
+*---------> Hero <----------
+*
+*/
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  nav {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 30px 30px;
+  }
+  a.botao-regular {
+    margin: 0px 10px;
+    color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+
+    &:hover {
+      outline: $roxo solid 2px;
+    }
+  }
+  a.botao-solido {
+    background-color: $roxo;
+    color: white;
+    padding: 10px;
+    border: $roxo solid 2px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+    transition: 500ms;
+    &:hover {
+      background-color: white;
+      color: $roxo;
+      box-shadow: none;
+    }
+  }
+  h1 {
+    color: $azul-titulo;
+    font-size: 45px;
+    font-weight: bolder;
+  }
+  h2 {
+    font-weight: 100;
+    margin-top: 20px;
+    font-size: 20px;
+    color: rgba($color: #000000, $alpha: 0.9);
+  }
+  img {
+    margin-top: 100px;
+  }
+  .down-arrow {
+    background-image: url("./img/arrow-regular.svg");
+    height: 50px;
+    width: 50px;
+    transition: 500ms;
+    margin-top: 100px;
+    &:hover {
+      background-image: url("./img/arrow-solid.svg");
+    }
+  }
+}
+
+/*
+*
+*---------> Sobre mim <----------
+*
+*/
+
+section#sobre-mim {
+  color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 70px;
+  background-color: $roxo;
+  div {
+    @include box-style(white, 800px, 400px);
+  }
+  h3 {
+    padding: 50px;
+    text-align: center;
+  }
+  p {
+    font-size: 15px;
+    padding: 0px 80px;
+    text-align: center;
+    letter-spacing: 3px;
+    line-height: 1.5;
+  }
+}
+
+/*
+*
+*---------> Skills <----------
+*
+*/
+
+section#skills {
+  color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $roxo;
+  h3 {
+    color: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    background-color: $roxo;
+    text-align: center;
+  }
+  div.box {
+    @include box-style(white, 500px, 500px);
+    outline: solid white 1px;
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    div {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 5px;
+      background-color: $roxo;
+    }
+
+    p {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 50%;
+      text-align: center;
+      border: 5px solid $roxo;
+      background-color: white;
+      &:hover {
+        color: $roxo;
+      }
+    }
+  }
+}
+
+/*
+*
+*---------> Projetos <----------
+*
+*/
+
+section#projetos {
+  color: rgba(0, 0, 0, 0.9);
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  h3 {
+    position: absolute;
+    top: 40px;
+    color: $azul-titulo;
+  }
+  a {
+    .box {
+      @include circle-style($roxo, 300px);
+      text-align: center;
+
+      h4 {
+        color: white;
+        font-weight: 100;
+        background-color: $roxo;
+        padding: 10px;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+        display: flex;
+        flex-direction: column;
+        span {
+          display: none;
+          margin-top: 10px;
+          font-size: 14px;
+          font-family: sans-serif;
+        }
+      }
+      img {
+        transition: 500ms;
+        height: 100%;
+        width: 100%;
+        border-radius: 100%;
+        filter: grayscale(100%);
+      }
+    }
+    &:hover {
+      h4{
+        span {
+          display: inline-block;
+        }
+      }
+      img {
+        filter: none;
+      }
+    }
+  }
+}
+
+/*
+*
+*---------> Formação e Experiênciao <----------
+*
+*/
+
+section#historico {
+  position: relative;
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+  flex-direction: column;
+  h3 {
+    position: absolute;
+    top: 70px;
+    color: $azul-titulo;
+  }
+  p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    font-size: 18px;
+    span {
+      display: none;
+      font-size: 15px;
+    }
+    &:hover {
+      span {
+        display: block;
+      }
+    }
+  }
+}
+
+/*
+*
+*---------> Contato <----------
+*
+*/
+
+section#contato{
+  height: 600px;
+  background-color: #2c2f33;
+  color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+  h3 {
+    position: absolute;
+    top: 40px;
+    font-weight: 100;
+    font-size: 40px;
+  }
+  form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    label {
+      padding-top: 15px;
+    }
+    input{
+      padding: 10px;
+    }
+    textarea{
+      padding: 10px;
+      resize: none;
+    }
+    button {
+      margin: 20px;
+      background-color: $roxo;
+      color: white;
+      padding: 10px;
+      border: $roxo solid 2px;
+      box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+      transition: 500ms;
+      &:hover {
+        background-color: white;
+        color: $roxo;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+/*
+*
+*---------> Redes Sociais <----------
+*
+*/
+
+section#redes{
+  height: 100px;
+  background-color: #2c2f33;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+  }
+}
