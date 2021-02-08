@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body,
+#main-container {
+  height: 100%;
+}
+
+#main-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto 3fr 1.5fr auto;
+      grid-template-rows: auto 3fr 1.5fr auto;
+}
+
+#main-container #top-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 400px auto;
+      grid-template-columns: 400px auto;
+}
+
+#main-container #top-container div {
+  padding: 20px;
+  text-align: center;
+}
+
+#main-container #top-container .green-background {
+  background-color: green;
+}
+
+#main-container #top-container .yellow-background {
+  background-color: yellow;
+}
+
+#main-container .pink-background {
+  display: -ms-grid;
+  display: grid;
+  text-align: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  background-color: deeppink;
+}
+
+#main-container #middle-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 1fr 1fr;
+      grid-template-columns: 2fr 1fr 1fr;
+}
+
+#main-container #middle-container #content2 {
+  background-color: blue;
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  text-align: center;
+}
+
+#main-container #middle-container #vertical-middle-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+}
+
+#main-container #middle-container #vertical-middle-container #image .red-background {
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  text-align: center;
+  background-color: red;
+}
+
+#main-container #middle-container #vertical-middle-container #extra .lightgreen-background {
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  text-align: center;
+  background-color: lightgreen;
+  height: 100%;
+}
+
+#main-container .purple-background {
+  padding: 15px;
+  text-align: center;
+  background-color: purple;
+}
