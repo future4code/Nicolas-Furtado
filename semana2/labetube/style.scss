@@ -1,0 +1,148 @@
+/* 
+    Cores
+*/
+$fundo-cinza-escuro: #181818;
+$fundo-cinza-claro: #202020;
+$fundo-cinza-preto: #121212;
+$fonte-cinza: rgb(196, 196, 196);
+
+/*
+    Reset
+*/
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Mega&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: $fonte-cinza;
+  font-family: "Lexend Mega", sans-serif;
+}
+
+/*
+    Geral
+*/
+body {
+  height: 100vh;
+  background-color: $fundo-cinza-escuro;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+/*
+    Header
+*/
+header {
+  background-color: $fundo-cinza-claro;
+  display: flex;
+  padding: 20px 100px;
+  justify-content: space-between;
+  align-items: center;
+  .back-button {
+    border: none;
+    outline: none;
+    img{
+      filter: invert(100%);
+      width: 25px;
+    }
+  }
+  div {
+    h1 {
+      color: white;
+      margin-left: 20px;
+    }
+    display: flex;
+    align-items: center;
+    #logo {
+      height: 50px;
+    }
+  }
+  form {
+    display: flex;
+    align-items: center;
+    input {
+      padding: 10px;
+      outline: none;
+      border: none;
+      width: 400px;
+      background-color: $fundo-cinza-preto;
+    }
+    button {
+      height: 36px;
+      padding: 0px 10px 0px 0px;
+      background-color: $fundo-cinza-preto;
+      border: none;
+      outline: none;
+    }
+    #loupe-icon {
+      height: 25px;
+    }
+  }
+}
+
+/*
+    Lista de Videos
+*/
+section.videos {
+  margin: 0px 100px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  justify-items: center;
+  gap: 15px;
+  a {
+    text-decoration: none;
+    &:hover {
+      box-shadow: black 0px 0px 10px;
+    }
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    p {
+      margin: 20px 5px;
+      font-size: 15px;
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
+
+/*
+    Tela de Video
+*/
+section.video {
+  margin: 0px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h2{
+    margin: 15px;
+  }
+  video{
+    width: 70%;
+  }
+}
+
+/*
+    Footer
+*/
+footer {
+  font-size: 12px;
+  background-color: $fundo-cinza-claro;
+  display: flex;
+  align-items: center;
+  margin: 20px 100px;
+  height: 50px;
+  justify-content: space-around;
+  span {
+    color: red;
+  }
+  #contact {
+    img {
+      height: 25px;
+      margin: 0px 10px;
+    }
+  }
+}
