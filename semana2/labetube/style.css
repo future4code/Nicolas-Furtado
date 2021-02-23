@@ -1,0 +1,201 @@
+/* 
+    Cores
+*/
+/*
+    Reset
+*/
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Mega&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #c4c4c4;
+  font-family: "Lexend Mega", sans-serif;
+}
+
+/*
+    Geral
+*/
+body {
+  height: 100vh;
+  background-color: #181818;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto 1fr auto;
+      grid-template-rows: auto 1fr auto;
+}
+
+/*
+    Header
+*/
+header {
+  background-color: #202020;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px 100px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .back-button {
+  border: none;
+  outline: none;
+}
+
+header .back-button img {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+  width: 25px;
+}
+
+header div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header div h1 {
+  color: white;
+  margin-left: 20px;
+}
+
+header div #logo {
+  height: 50px;
+}
+
+header form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header form input {
+  padding: 10px;
+  outline: none;
+  border: none;
+  width: 400px;
+  background-color: #121212;
+}
+
+header form button {
+  height: 36px;
+  padding: 0px 10px 0px 0px;
+  background-color: #121212;
+  border: none;
+  outline: none;
+}
+
+header form #loupe-icon {
+  height: 25px;
+}
+
+/*
+    Lista de Videos
+*/
+section.videos {
+  margin: 0px 100px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  gap: 15px;
+}
+
+section.videos a {
+  text-decoration: none;
+}
+
+section.videos a:hover {
+  -webkit-box-shadow: black 0px 0px 10px;
+          box-shadow: black 0px 0px 10px;
+}
+
+section.videos div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+section.videos div p {
+  margin: 20px 5px;
+  font-size: 15px;
+}
+
+section.videos div img {
+  width: 100%;
+}
+
+/*
+    Tela de Video
+*/
+section.video {
+  margin: 0px 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section.video h2 {
+  margin: 15px;
+}
+
+section.video video {
+  width: 70%;
+}
+
+/*
+    Footer
+*/
+footer {
+  font-size: 12px;
+  background-color: #202020;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 20px 100px;
+  height: 50px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+footer span {
+  color: red;
+}
+
+footer #contact img {
+  height: 25px;
+  margin: 0px 10px;
+}
