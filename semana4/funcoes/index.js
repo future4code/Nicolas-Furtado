@@ -18,7 +18,7 @@
 
 // EXERCICIO 3
 /*
-  A função cria um novo array com valores que são o dobro dos valores pares do array de parametro, a função poderia se chamar dobrarPares
+  A função cria um novo array com valores que são o dobro dos valores pares do array de parametro, a função poderia se chamar quadradoDosPares
 */
 
 /********************************************
