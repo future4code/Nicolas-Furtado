@@ -7,28 +7,8 @@ const criarTarefa = () => {
       elemento.style.textDecoration = "line-through";
     };
     elemento.appendChild(document.createTextNode(tarefa));
-    switch (dia) {
-      case "segunda":
-        document.querySelector("#" + dia).appendChild(elemento);
-        break;
-      case "terca":
-        document.querySelector("#" + dia).appendChild(elemento);
-        break;
-      case "quarta":
-        document.querySelector("#" + dia).appendChild(elemento);
-        break;
-      case "quinta":
-        document.querySelector("#" + dia).appendChild(elemento);
-        break;
-      case "sexta":
-        document.querySelector("#" + dia).appendChild(elemento);
-        break;
-      case "sabado":
-        document.querySelector("#" + dia).appendChild(elemento);
-        break;
-      case "domingo":
-        document.querySelector("#" + dia).appendChild(elemento);
-        break;
+    if(dia == "segunda" || dia == "terca" || dia == "quarta" || dia == "quinta" || dia == "sexta" || dia == "sabado" || dia == "domingo"){
+      document.querySelector("#" + dia).appendChild(elemento);
     }
     document.querySelector("input").value = "";
   } else {
