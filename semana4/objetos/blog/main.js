@@ -1,4 +1,7 @@
-let posts = JSON.parse(document.cookie);
+let posts = [];
+if (document.cookie != "") {
+  posts = JSON.parse(document.cookie);
+}
 
 const criarPost = () => {
   const post = {
@@ -37,14 +40,12 @@ const criarPost = () => {
   } else {
     alert("Preencha todos os campos");
   }
-  console.log(posts);
   document.cookie = JSON.stringify(posts);
 };
 
 const renderizarPosts = () => {
   posts = JSON.parse(document.cookie);
-  console.log(document.cookie);
-  for (post of posts){
+  for (post of posts) {
     document.querySelector("#container-de-posts").innerHTML += `
       <div id='post'>
         <img src ='${post.imagem}'>
@@ -54,5 +55,4 @@ const renderizarPosts = () => {
       </div>
     `;
   }
-  
-}
+};
