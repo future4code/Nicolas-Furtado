@@ -203,7 +203,13 @@ function imprimeChamada() {
 // Exercício 14
 
 function criaRetangulo(lado1, lado2) {
-  // implemente sua lógica aqui
+  let obj = {
+		largura: lado1,
+		altura: lado2,
+		perimetro: (lado1 + lado2)*2,
+		area: lado1 * lado2,
+	}
+	return obj;
 }
 
 // Exercício 15
