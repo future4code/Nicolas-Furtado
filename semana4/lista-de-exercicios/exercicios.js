@@ -215,7 +215,13 @@ function criaRetangulo(lado1, lado2) {
 // Exercício 15
 
 function anonimizaPessoa(pessoa) {
-  // implemente sua lógica aqui
+  let pessoaAnonima = {
+		nome: "ANÔNIMO",
+		idade: pessoa.idade,
+		email: pessoa.email,
+		endereco: pessoa.endereco
+	}
+	return pessoaAnonima;
 }
 
 // Exercício 16
