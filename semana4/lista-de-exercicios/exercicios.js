@@ -44,9 +44,9 @@ function retornaMaiorNumero(array) {
 
 //Exercício 5
 
-function retornaQuantidadeElementos (array) {
-   // implemente sua lógica aqui
-}
+function retornaQuantidadeElementos(array) {
+   return array.length;
+ }
 
 //Exercício 6
 
