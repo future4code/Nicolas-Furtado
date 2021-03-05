@@ -22,11 +22,13 @@ function retornaNumerosParesElevadosADois(array) {
 
 function retornaNumerosPares(array) {
    let novoArray = [];
+   
    array.forEach((element)=>{
      if(element % 2 === 0){
        novoArray.push(element);
      }
    });
+
    return novoArray;
  }
 
@@ -83,8 +85,28 @@ function checaTriangulo(a, b, c) {
 // Exercício 9
 
 function comparaDoisNumeros(num1, num2) {
-   // implemente sua lógica aqui
-}
+   let obj = {
+     maiorNumero : 0,
+     maiorDivisivelporMenor: true,
+     diferenca: 0
+   }
+   let menor = 0;
+   if(num1 > num2){
+     obj.maiorNumero = num1;
+     menor = num2;
+   }else if(num2 > num1){
+     obj.maiorNumero = num2;
+     menor = num1;
+   }
+   if(obj.maiorNumero % menor == 0){
+     obj.maiorDivisivelporMenor = true
+   }else{
+     obj.maiorDivisivelporMenor = false
+   }
+   obj.diferenca = obj.maiorNumero - menor;
+   return obj;
+ }
+ 
 
 // Exercício 10
 
