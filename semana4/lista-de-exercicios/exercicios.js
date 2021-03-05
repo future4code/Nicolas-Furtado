@@ -302,14 +302,26 @@ const pessoas = [
 
 //Exercício 18, letra A
 
-function retornaPessoasAutorizadas(pessoas) {
-  // implemente sua lógica aqui
+function retornaPessoasAutorizadas() {
+  let novoArray = [];
+	novoArray = pessoas.filter((element)=>{
+		if(element.idade > 14 && element.altura >= 1.5 && element.idade < 60){
+			return true;
+		}
+	});
+	return novoArray;
 }
 
 // Exercício 18, letra B
 
-function retornaPessoasNaoAutorizadas(pessoas) {
-  // implemente sua lógica aqui
+function retornaPessoasNaoAutorizadas() {
+	let novoArray = [];
+	novoArray = pessoas.filter((element)=>{
+		if(!(element.idade > 14 && element.altura >= 1.5 && element.idade < 60)){
+			return true;
+		}
+	});
+	return novoArray;
 }
 
 //Exercício 19
