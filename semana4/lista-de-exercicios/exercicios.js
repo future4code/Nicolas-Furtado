@@ -353,8 +353,42 @@ const consultas = [
   },
 ];
 
-function retornaEmailConsulta(consultas) {
-  // implemente sua lógica aqui
+function retornaEmailConsulta() {
+  return consultas.map((consulta) => {
+    let emailFinal = "Olá, "
+
+    if (consulta.cancelada) {
+      if (consulta.genero === "feminino") {
+        emailFinal += "Sra. "
+      } else {
+        emailFinal += "Sr. "
+      }
+
+      emailFinal += consulta.nome + ". "
+      emailFinal += "Estamos enviando esta mensagem para "
+
+      if (consulta.genero === "feminino") {
+        emailFinal += "lembrá-la "
+      } else {
+        emailFinal += "lembrá-lo "
+      }
+
+      emailFinal += "da sua consulta no dia " + consulta.dataDaConsulta + ". "
+      emailFinal += "Por favor, acuse o recebimento deste-email."
+    } else {
+      if (consulta.genero === "feminino") {
+        emailFinal += "Sra. "
+      } else {
+        emailFinal += "Sr. "
+      }
+
+      emailFinal += consulta.nome + ". "
+      emailFinal += "Infelizmente sua consulta marcada para o dia "
+      emailFinal += consulta.dataDaConsulta + " foi cancelada. "
+      emailFinal += "Se quiser, pode entrar em contato conosco para remarcá-la."
+    }
+    return emailFinal
+  });
 }
 
 //Exercício 20
@@ -369,5 +403,19 @@ const contas = [
 ];
 
 function atualizaSaldo() {
-  // implemente sua lógica aqui
+  const contas = [
+		{ cliente: "João", saldoTotal: 1000, compras: [100, 200, 300] },
+		{ cliente: "Paula", saldoTotal: 7500, compras: [200, 1040] },
+		{ cliente: "Pedro", saldoTotal: 10000, compras: [5140, 6100, 100, 2000] },
+		{ cliente: "Luciano", saldoTotal: 100, compras: [100, 200, 1700] },
+		{ cliente: "Artur", saldoTotal: 1800, compras: [200, 300] },
+		{ cliente: "Soter", saldoTotal: 1200, compras: [] }
+	]
+
+	contas.forEach((element)=>{
+		let gasto = 0;
+		element.compras.forEach((compra)=>gasto+=compra);
+		element.saldoTotal -= gasto;
+	})
+	return contas;
 }
