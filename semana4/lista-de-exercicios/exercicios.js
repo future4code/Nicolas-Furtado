@@ -191,7 +191,13 @@ function filmeFavorito() {
 // Exercício 13
 
 function imprimeChamada() {
-	
+	let obj = {
+    nome: "O Diabo Veste Prada",
+    ano: 2006,
+    diretor: "David Frankel",
+    atores: ["Meryl Streep", "Anne Hathaway", "Emily Blunt", "Stanley Tucci"],
+  };
+  return `Venha assistir ao filme ${obj.nome}, de ${obj.ano}, dirigido por ${obj.diretor} e estrelado por ${obj.atores[0]}, ${obj.atores[1]}, ${obj.atores[2]}, ${obj.atores[3]}.`
 }
 
 // Exercício 14
