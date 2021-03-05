@@ -8,9 +8,15 @@ function inverteArray(array) {
 
 //Exercício 2
 
-function retornaNumerosParesElevadosADois (array) {
-   // implemente sua lógica aqui
-}
+function retornaNumerosParesElevadosADois(array) {
+   let novoArray = [];
+   array.forEach((element)=>{
+     if(element % 2 === 0){
+       novoArray.push(element*element);
+     }
+   });
+   return novoArray;
+ }
 
 //Exercício 3
 
