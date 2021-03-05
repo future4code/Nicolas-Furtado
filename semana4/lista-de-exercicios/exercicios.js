@@ -20,9 +20,15 @@ function retornaNumerosParesElevadosADois(array) {
 
 //Exercício 3
 
-function retornaNumerosPares (array) {
-   // implemente sua lógica aqui
-}
+function retornaNumerosPares(array) {
+   let novoArray = [];
+   array.forEach((element)=>{
+     if(element % 2 === 0){
+       novoArray.push(element);
+     }
+   });
+   return novoArray;
+ }
 
 //Exercício 4
 
