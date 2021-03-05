@@ -51,8 +51,8 @@ function retornaQuantidadeElementos(array) {
 //Exercício 6
 
 function retornaExpressoesBooleanas() {
-   // implemente sua lógica aqui
-}
+   return [false, false, true, true, true];
+ }
 
 //Exercício 7
 
