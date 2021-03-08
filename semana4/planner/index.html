@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planner</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Planner</h1>
+    </header>
+    <section id="tabela">
+      <div><h5>Segunda-Feira</h5><div id="segunda"></div></div>
+      <div><h5>Terça-Feira</h5><div id="terca"></div></div>
+      <div><h5>Quarta-Feira</h5><div id="quarta"></div></div>
+      <div><h5>Quinta-Feira</h5><div id="quinta"></div></div>
+      <div><h5>Sexta-Feira</h5><div id="sexta"></div></div>
+      <div><h5>Sábado</h5><div id="sabado"></div></div>
+      <div><h5>Domingo</h5><div id="domingo"></div></div>
+    </section>
+    <section id="form">
+     <div class="info-container">
+        <div>
+          <label for="tarefa">Tarefa</label>
+          <input name="tarefa" id="tarefa" type="text" />
+        </div>
+        <div>
+          <label for="dia">Dia da semana</label>
+          <select name="dia" id="dia" type="text">
+            <option value="segunda">Segunda-Feira</option>
+            <option value="terca">Terça-Feira</option>
+            <option value="quarta">Quarta-Feira</option>
+            <option value="quinta">Quinta-Feira</option>
+            <option value="sexta">Sexta-Feira</option>
+            <option value="sabado">Sábado</option>
+            <option value="domingo">Domingo</option>
+          </select>
+        </div>
+      </div>
+      <div id="btns">
+        <button onclick="resetar()" id="resetar">Resetar</button>
+        <button onclick="criarTarefa()" id="adicionar">Adicionar</button>
+      </div>  
+    </section>
+    <script src="main.js"></script>
+  </body>
+</html>
