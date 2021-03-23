@@ -29,9 +29,8 @@ export default class Cadastros extends React.Component {
         }
       )
       .then((res) => {
-        const novosCadastros = [];
         res.data.forEach((e) => {
-          this.setState({ cadastros: [...novosCadastros, e] });
+          this.setState({ cadastros: [...this.state.cadastros, e] });
         });
       })
       .catch((err) => {
