@@ -37,31 +37,40 @@ export default class Cadastros extends React.Component {
         console.log(err.response.data);
       });
   };
-  deleteUser = (id) => {
-    axios
-      .delete(
-        "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/" +
-          id,
-        {
-          headers: {
-            Authorization: "nicolas-furtado-cruz",
-          },
-        }
-      )
-      .then((res) => {
-        this.setState({cadastros: []})
-        this.getAllUsers();
-      })
-      .catch((err) => {
-        console.log(err.response.data);
-      });
+  deleteUser = (id, name) => {
+    if (window.confirm("Deseja excluir o usuario " + name + "?")) {
+      axios
+        .delete(
+          "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/" +
+            id,
+          {
+            headers: {
+              Authorization: "nicolas-furtado-cruz",
+            },
+          }
+        )
+        .then((res) => {
+          this.setState({ cadastros: [] });
+          this.getAllUsers();
+        })
+        .catch((err) => {
+          console.log(err.response.data);
+        });
+    }
   };
 
   render() {
     const cadastros = this.state.cadastros.map((e) => {
       return (
         <li>
-          {e.name} <button onClick={()=>{this.deleteUser(e.id)}} >deletar</button>
+          {e.name}{" "}
+          <button
+            onClick={() => {
+              this.deleteUser(e.id, e.name);
+            }}
+          >
+            deletar
+          </button>
         </li>
       );
     });
