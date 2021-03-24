@@ -24,6 +24,7 @@ export default class Cadastro extends React.Component {
           <input onChange={this.props.emailHandle}/>
         </div>
         <button onClick={this.props.add}>Adicionar</button>
+        <button onClick={this.props.lista}>Ver lista</button>
       </MainContainer>
     );
   }
