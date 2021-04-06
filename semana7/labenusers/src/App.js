@@ -14,7 +14,7 @@ const MainContainer = styled.div`
 
 export default class App extends React.Component {
   state = {
-    page: "cadastros",
+    page: "cadastro",
     nameValue: "",
     emailValue: "",
   };
@@ -57,6 +57,9 @@ export default class App extends React.Component {
   back = () => {
     this.setState({ page: "cadastro" });
   };
+  lista = () => {
+    this.setState({ page: "cadastros" });
+  };
 
   render() {
     const page = () => {
@@ -67,10 +70,11 @@ export default class App extends React.Component {
               add={this.add}
               nameHandle={this.nameHandle}
               emailHandle={this.emailHandle}
+              lista={this.lista}
             />
           );
         case "cadastros":
-          return <Cadastros back={this.back} />;
+          return <Cadastros back={this.back}  />;
         default:
           return "página não encontrada";
       }

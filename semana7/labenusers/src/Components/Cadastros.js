@@ -12,6 +12,7 @@ const MainContainer = styled.div`
 export default class Cadastros extends React.Component {
   state = {
     cadastros: [],
+    mensagem: 'Carregando'
   };
 
   componentDidMount() {
@@ -32,6 +33,10 @@ export default class Cadastros extends React.Component {
         res.data.forEach((e) => {
           this.setState({ cadastros: [...this.state.cadastros, e] });
         });
+        console.log(res.data)
+        if(res.data.length === 0){
+          this.setState({mensagem: 'Não há nada aqui!'})
+        }
       })
       .catch((err) => {
         console.log(err.response.data);
@@ -77,6 +82,7 @@ export default class Cadastros extends React.Component {
     return (
       <MainContainer>
         <h1>Pessoas cadastradas</h1>
+        {(this.state.cadastros.length === 0) && this.state.mensagem}
         <ul>{cadastros}</ul>
         <button onClick={this.props.back}>Voltar</button>
       </MainContainer>
