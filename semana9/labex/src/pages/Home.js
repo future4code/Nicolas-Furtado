@@ -19,6 +19,8 @@ const MainContainer = styled.div`
   flex-direction: column;
   justify-content:center;
   height: 100vh;
+  background-image: url(${'./img/background.jpg'});
+  background-size: 1000px;
 `;
 
 const ButtonsContainer = styled.div`

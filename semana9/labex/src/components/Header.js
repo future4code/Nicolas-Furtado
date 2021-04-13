@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, Button, Toolbar } from "@material-ui/core";
+import { AppBar, IconButton, Toolbar } from "@material-ui/core";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import styled from "styled-components";
 
@@ -9,16 +9,11 @@ const StyledToolbar = styled(Toolbar)`
 
 const Header = (props) => {
   return (
-    <AppBar position='static'>
+    <AppBar position='fixed'>
       <StyledToolbar>
-        <Button
-          variant="contained"
-          color="secondary"
-          startIcon={<ArrowBackIcon />}
-          onClick={props.action}
-        >
-          Voltar
-        </Button>
+      <IconButton onClick={props.action} color='secondary' aria-label="voltar">
+        <ArrowBackIcon />
+      </IconButton>
       </StyledToolbar>
     </AppBar>
   );
