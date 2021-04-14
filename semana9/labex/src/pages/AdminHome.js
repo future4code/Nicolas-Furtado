@@ -3,13 +3,19 @@ import styled from "styled-components";
 import Header from "../components/Header";
 import { useHistory } from "react-router-dom";
 import { Button } from "@material-ui/core";
+import ListContainer from "../components/ListContainer";
+import CreateTripForm from "../components/CreateTripForm";
 
 const MainContainer = styled.div`
-  padding-top: 64px;
-  height: 100vh;
-  width: 100vw;
-  background-image: url(${"./img/background.jpg"});
+  padding-top: 80px;
+  padding-bottom: 40px;
+  min-height: 100vh;
+  gap: 50px;
+  background-image: url(${'./img/background.jpg'});
   background-size: 1000px;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
 `;
 
 const AdminHome = () => {
@@ -40,6 +46,8 @@ const AdminHome = () => {
       >
         Ver detalhes
       </Button>
+      <CreateTripForm/>
+      <ListContainer/>
     </MainContainer>
   );
 };

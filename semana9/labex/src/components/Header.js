@@ -25,7 +25,7 @@ const Header = (props) => {
           <Button
             onClick={() => {
               localStorage.setItem("token", "");
-              history.push("/");
+              history.push("/login");
             }}
             variant="outlined"
             color="secondary"
