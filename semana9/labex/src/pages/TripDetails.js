@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styled from 'styled-components';
 import { useHistory } from "react-router";
 import Header from "../components/Header";
@@ -14,6 +14,14 @@ const MainContainer = styled.div`
 const TripDetails = () => {
   const history = useHistory();
 
+  useEffect(() => {
+    if (
+      !localStorage.getItem("token") ||
+      localStorage.getItem("token") === ""
+    ) {
+      history.push("/login");
+    }
+  }, []);
   return (
     <MainContainer>
       <Header action={()=>{
