@@ -16,7 +16,7 @@ const StyledGridContainer = styled(Grid)`
   width: 90vw;
 `;
 
-const ListContainer = () => {
+const ListContainer = (props) => {
   const [trips, setTrips] = useState([]);
 
   useEffect(() => {
@@ -45,7 +45,7 @@ const ListContainer = () => {
         {trips.map((trip) => {
           return (
             <Grid key={trip.id} lg={4} sm={6} xs={12} item>
-              <TripCard name={trip.name} durationInDays={trip.durationInDays} date={trip.date} description={trip.description} planet={trip.planet}/>
+              <TripCard details={props.details} name={trip.name} durationInDays={trip.durationInDays} date={trip.date} description={trip.description} planet={trip.planet}/>
             </Grid>
           );
         })}

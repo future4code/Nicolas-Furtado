@@ -47,7 +47,7 @@ const AdminHome = () => {
         Ver detalhes
       </Button>
       <CreateTripForm/>
-      <ListContainer/>
+      <ListContainer details/>
     </MainContainer>
   );
 };

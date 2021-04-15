@@ -21,6 +21,9 @@ const MainContainer = styled.div`
 
 const StyledTextField = styled(TextField)`
   width: 300px;
+  &:invalid {
+    width: 500px;
+  }
 `;
 
 const Title = styled.div`
@@ -35,12 +38,14 @@ const LoginCard = () => {
   const history = useHistory();
   const [email, setEmail] = useState("astrodev@gmail.com.br");
   const [password, setPassword] = useState("123456");
+  const [validateEmail, setValidateEmail] = useState(true);
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
       history.push("/admin");
     }
-  }, []);
+    setValidateEmail(validate)
+  }, [email]);
 
   const handle = (e) => {
     if (e.target.id === "email") {
@@ -52,6 +57,9 @@ const LoginCard = () => {
   };
 
   const login = () => {
+    if(validateEmail){
+      return alert('Preencha um email válido');
+    }
     const body = {
       email,
       password,
@@ -71,6 +79,14 @@ const LoginCard = () => {
       });
   };
 
+  const validate = () => {
+    if(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(email)){
+      return false
+    }else{
+      return true
+    }
+  };
+
   return (
     <MainContainer>
       <Title>Login</Title>
@@ -80,6 +96,8 @@ const LoginCard = () => {
         id="email"
         label="Email"
         variant="outlined"
+        error={validateEmail}
+        helperText={validateEmail ? 'Email inválido' : ''}
       />
       <StyledTextField
         onChange={handle}
