@@ -38,14 +38,6 @@ const AdminHome = () => {
           history.push("/");
         }}
       />
-      <p>Página do adm</p>
-      <Button
-        onClick={() => {
-          history.push("/details");
-        }}
-      >
-        Ver detalhes
-      </Button>
       <CreateTripForm/>
       <ListContainer details/>
     </MainContainer>

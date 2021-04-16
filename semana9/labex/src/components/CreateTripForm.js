@@ -54,6 +54,7 @@ const CreateTripForm = () => {
       auth: localStorage.getItem('token')
     }}).then((res)=>{
       alert('Viagem criada com sucesso');
+      document.location.reload(true);
     }).catch((err)=>{
       console.log(err.response)
       alert('Você não está autorizado!')

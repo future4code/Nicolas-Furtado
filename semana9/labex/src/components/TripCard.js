@@ -1,6 +1,9 @@
 import { IconButton } from "@material-ui/core";
 import { MoreVert } from "@material-ui/icons";
+import DeleteIcon from "@material-ui/icons/Delete";
+import axios from "axios";
 import React from "react";
+import { useHistory } from "react-router";
 import styled from "styled-components";
 
 const MainContainer = styled.div`
@@ -12,45 +15,77 @@ const MainContainer = styled.div`
   flex-direction: column;
   padding: 20px;
   overflow-y: auto;
-  justify-content:center;
+  justify-content: center;
   position: relative;
 `;
 
 const Title = styled.h5`
   margin: 0px;
   font-size: 18px;
-`
+`;
 const Description = styled.p`
   font-size: 16px;
-  color: rgba(0,0,0,0.7);
-`
+  color: rgba(0, 0, 0, 0.7);
+`;
 const OptionLabel = styled.span`
   font-size: 16px;
   font-weight: bold;
-`
+`;
 const OptionValue = styled.span`
   font-size: 15px;
   padding-left: 5px;
-  color: rgba(0,0,0,0.7);
-`
-const Option = styled.div``
+  color: rgba(0, 0, 0, 0.7);
+`;
+const Option = styled.div``;
 
-const Details = styled(IconButton)`
-  position:absolute;
+const Details = styled.div`
+  position: absolute;
   right: 0px;
   top: 0px;
-`
-
+`;
 const TripCard = (props) => {
+  const history = useHistory();
+  const deleteTrip = () => {
+    axios
+      .delete(
+        `https://us-central1-labenu-apis.cloudfunctions.net/labeX/nicolas-furtado-cruz/trips/${props.id}`,
+        {
+          headers: {
+            auth: localStorage.getItem('token'),
+          },
+        }
+      )
+      .then((res) => {
+        alert('viagem excluida com sucesso');
+        document.location.reload(true);
+      })
+      .catch((err) => {
+        alert(err.response.data.message);
+      });
+  };
+
   return (
     <MainContainer>
-      {props.details && <Details
-          onClick={props.action}
-          color="secondary"
-          aria-label="voltar"
-        >
-          <MoreVert/>
-        </Details>}
+      {props.details && (
+        <Details>
+          <IconButton
+            onClick={()=>{
+              history.push("/details/"+props.id);
+            }}
+            color="secondary"
+            aria-label="voltar"
+          >
+            <MoreVert />
+          </IconButton>
+          <IconButton
+            onClick={deleteTrip}
+            color="secondary"
+            aria-label="voltar"
+          >
+            <DeleteIcon />
+          </IconButton>
+        </Details>
+      )}
       <Title>{props.name}</Title>
       <Description>{props.description}</Description>
       <Option>
