@@ -33,11 +33,32 @@ const StyledButton = styled(Button)`
 `
 
 const CreateTripForm = () => {
-  const [describe, setDescribe] = useState('');
+  const [description, setdescription] = useState('');
   const [name, setName] = useState("");
   const [planet, setPlanet] = useState("");
   const [date, setDate] = useState("");
-  const [duration, setDuration] = useState(0);
+  const [durationInDays, setDurationInDays] = useState(0);
+
+  const CreateTrip = () => {
+    if(name === '' || date === '' || !durationInDays || planet === '' || description === ''){
+      return alert('Preencha todos os campos!')
+    }
+    const body = {
+      name,
+      planet,
+      date,
+      description,
+      durationInDays
+    }
+    axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/nicolas-furtado-cruz/trips`, body, {headers:{
+      auth: localStorage.getItem('token')
+    }}).then((res)=>{
+      alert('Viagem criada com sucesso');
+    }).catch((err)=>{
+      console.log(err.response)
+      alert('Você não está autorizado!')
+    })
+  }
 
   return (
     <MainContainer>
@@ -74,9 +95,9 @@ const CreateTripForm = () => {
           </StyledSelect>
           <StyledTextField
             onChange={(e) => {
-              setDescribe(e.target.value);
+              setdescription(e.target.value);
             }}
-            value={describe}
+            value={description}
             variant="outlined"
             label="Descrição"
           />
@@ -92,11 +113,11 @@ const CreateTripForm = () => {
           />
           <StyledSelect
             onChange={(e) => {
-              setDuration(e.target.value);
+              setDurationInDays(e.target.value);
             }}
             variant="outlined"
             displayEmpty
-            value={duration}
+            value={durationInDays}
           >
             <MenuItem value={0} disabled>
               Duração em dias
@@ -109,7 +130,7 @@ const CreateTripForm = () => {
           </StyledSelect>
         </div>
 
-        <StyledButton color="secondary" variant="outlined">
+        <StyledButton onClick={CreateTrip} color="secondary" variant="outlined">
           Criar
         </StyledButton>
       </FormContainer>
