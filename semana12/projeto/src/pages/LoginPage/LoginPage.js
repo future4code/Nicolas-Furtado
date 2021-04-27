@@ -13,15 +13,13 @@ import { useHistory } from "react-router-dom";
 import { goToSignup } from "../../routes/coordinator";
 import { login } from "../../services/requests";
 
-const LoginPage = () => {
+const LoginPage = (props) => {
   const history = useHistory();
   const [form, handleInputChange] = useForm({ email: "", password: "" });
 
-  
-
   const onSubmitForm = (e) => {
     e.preventDefault();
-    login(form, history);
+    login(form, history,props.setAuth);
   };
 
   return (

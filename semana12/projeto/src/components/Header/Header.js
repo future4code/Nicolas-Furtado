@@ -1,19 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { goToLogin, goToFeed } from "../../routes/coordinator";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import { StyledToolbar } from "./style";
 
-const Header = () => {
+const Header = (props) => {
   const history = useHistory();
-  const [auth, setAuth] = useState(false);
+  
 
   const login = () => {
     goToLogin(history);
   };
 
   const logout = () => {
+    localStorage.removeItem('token')
+    props.setAuth(false);
     goToLogin(history);
   };
 
@@ -29,7 +31,7 @@ const Header = () => {
         >
           LabEddit
         </Button>
-        {auth ? (
+        {props.auth ? (
           <Button onClick={logout} color="inherit">
             Logout
           </Button>

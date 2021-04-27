@@ -13,7 +13,7 @@ import { useHistory } from "react-router-dom";
 import { goToLogin } from "../../routes/coordinator";
 import { signup } from "../../services/requests";
 
-const SignupPage = () => {
+const SignupPage = (props) => {
   const history = useHistory();
   const [form, handleInputChange] = useForm({
     email: "",
@@ -23,7 +23,7 @@ const SignupPage = () => {
 
   const onSubmitForm = (e) => {
     e.preventDefault();
-    signup(form, history);
+    signup(form, history,props.setAuth);
   };
 
   return (
