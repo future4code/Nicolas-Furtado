@@ -12,6 +12,7 @@ import user_img from "../../assets/img/user.png";
 import { useHistory } from "react-router-dom";
 import { goToLogin } from "../../routes/coordinator";
 import { signup } from "../../services/requests";
+import useUnprotectedPage from "../../hooks/useUnprotectedPage";
 
 const SignupPage = (props) => {
   const history = useHistory();
@@ -20,6 +21,8 @@ const SignupPage = (props) => {
     password: "",
     username: "",
   });
+
+  useUnprotectedPage();
 
   const onSubmitForm = (e) => {
     e.preventDefault();
@@ -71,7 +74,7 @@ const SignupPage = (props) => {
           >
             Voltar
           </Button>
-          <Button type="submit" variant="contained" color="secondary">
+          <Button type="submit" variant="outlined" color="secondary">
             Cadastrar
           </Button>
         </ButtonsContainer>

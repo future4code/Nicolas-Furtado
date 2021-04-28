@@ -12,10 +12,13 @@ import user_img from "../../assets/img/user.png";
 import { useHistory } from "react-router-dom";
 import { goToSignup } from "../../routes/coordinator";
 import { login } from "../../services/requests";
+import useUnprotectedPage from "../../hooks/useUnprotectedPage";
 
 const LoginPage = (props) => {
   const history = useHistory();
   const [form, handleInputChange] = useForm({ email: "", password: "" });
+
+  useUnprotectedPage();
 
   const onSubmitForm = (e) => {
     e.preventDefault();
@@ -57,7 +60,7 @@ const LoginPage = (props) => {
           >
             Se cadastre
           </Button>
-          <Button type="submit" variant="contained" color="secondary">
+          <Button type="submit" variant="outlined" color="secondary">
             Login
           </Button>
         </ButtonsContainer>

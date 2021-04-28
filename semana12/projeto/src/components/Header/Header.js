@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
 import { goToLogin, goToFeed } from "../../routes/coordinator";
 import AppBar from "@material-ui/core/AppBar";
@@ -27,16 +27,16 @@ const Header = (props) => {
           onClick={() => {
             goToFeed(history);
           }}
-          color="inherit"
+          color="secondary"
         >
           LabEddit
         </Button>
         {props.auth ? (
-          <Button onClick={logout} color="inherit">
+          <Button onClick={logout} color="secondary">
             Logout
           </Button>
         ) : (
-          <Button onClick={login} color="inherit">
+          <Button variant='contained' onClick={login} color="secondary">
             Login
           </Button>
         )}

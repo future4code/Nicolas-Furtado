@@ -5,6 +5,7 @@ import LoginPage from "../pages/LoginPage/LoginPage";
 import PostPage from "../pages/PostPage/PostPage";
 import SignupPage from "../pages/SignupPage/SignupPage";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import CreatePostPage from "../pages/CreatePostPage/CreatePostPage";
 
 const Router = (props) => {
   return (
@@ -17,6 +18,9 @@ const Router = (props) => {
       </Route>
       <Route exact path="/post/:id">
         <PostPage />
+      </Route>
+      <Route exact path="/create">
+        <CreatePostPage />
       </Route>
       <Route exact path="/signup">
         <SignupPage setAuth={props.setAuth}/>
