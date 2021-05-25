@@ -7,3 +7,6 @@
 
 # Exercicio 2
 **D.** O comando foi executado com sucesso, mas nenhuma linha foi alterada porque não existe uma linha com o id correspondente.
+
+# Exercicio 5
+**A.** A ultima query seleciona os campos gender e a função count() para exibir o numero de linhas por genero. 
