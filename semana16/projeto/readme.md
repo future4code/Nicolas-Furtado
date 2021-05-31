@@ -9,7 +9,7 @@
 # Endpoints
 
 ## Buscar todos os users
-**GET** `localhost:3003/task/all`
+**GET** `localhost:3003/users/all`
 
 ## Buscar todas as tasks
 **GET** `localhost:3003/task/all`

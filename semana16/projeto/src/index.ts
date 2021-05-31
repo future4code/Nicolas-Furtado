@@ -6,6 +6,28 @@ import moment from 'moment';
 //string to data moment("22/07/2002", "DD/MM/YYYY").format('YYYY-MM-DD');
 //data to string moment("2002-07-22").format('DD/MM/YYYY');
 
+app.get("/user/all", async (req: Request, res: Response) => {
+  try {
+    const [result] = await connection.raw(`
+    SELECT * FROM TodoListUser;
+    `)
+    res.status(200).send(result)
+  } catch (error) {
+    res.status(500).send({message: "Internal error!"});
+  }
+});
+
+app.get("/task/all", async(req: Request, res: Response)=>{
+  try {
+    const [result] = await connection.raw(`
+      SELECT * FROM TodoListTask;
+    `);
+    res.status(200).send(result)
+  } catch (error) {
+    res.status(500).send({message: "Internal error!"});
+  }
+})
+
 app.put("/user", async (req: Request, res: Response) => {
   try {
     if (!req.body.name) {
@@ -155,24 +177,3 @@ app.get("/task/:id", async (req: Request, res: Response) => {
   }
 });
 
-app.get("/user/all", async (req: Request, res: Response) => {
-  try {
-    const [result] = await connection.raw(`
-    SELECT * FROM TodoListUser;
-    `)
-    res.status(200).send(result[0])
-  } catch (error) {
-    res.status(500).send({message: "Internal error!"});
-  }
-});
-
-app.get("/task/all", async(req: Request, res: Response)=>{
-  try {
-    const [result] = await connection.raw(`
-      SELECT * FROM TodoListTask;
-    `);
-    res.status(200).send(result[0])
-  } catch (error) {
-    res.status(500).send({message: "Internal error!"});
-  }
-})
