@@ -1,17 +1,3 @@
-// Importar as coisas FEITO
-// Criar a base da requisição  FEITO
-// Exportar como default FEITO
-// Trycatch FEITO
-// Automatizar envio de erros FEITO
-
-// Verificar se o usuario ta logado FEITO
-// Pegar as informações do token (nome, email, id) FEITO
-// enviar informações
-
-// ATUALIZACAO
-// pegar user com o id do token no banco
-// enviar
-
 import { Response, Request } from "express";
 import { getTokenData } from "../middleware/authenticator";
 import connection from "../connection";
