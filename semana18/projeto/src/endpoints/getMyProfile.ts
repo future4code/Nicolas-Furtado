@@ -22,13 +22,15 @@ const getMyProfile = async (req: Request, res: Response) => {
       throw Error("Preencha o campo 'token'");
     }
     const authenticationData = getTokenData(req.body.token);
-    console.log(authenticationData.id);
     const [result] = await connection.raw(`
-      SELECT id, name, email FROM cookenu_users WHERE '${authenticationData.id}'
+      SELECT id, name, email FROM cookenu_users WHERE id = '${authenticationData.id}'
     `);
     const user = result[0];
-    res.status(200).send({user});
+    res.status(200).send({ user });
   } catch (error) {
+    if (error.message === "invalid signature") {
+      res.status(500).send({ message: "Token inválido" });
+    }
     res.status(500).send({ message: error.message });
   }
 };

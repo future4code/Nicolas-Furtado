@@ -24,6 +24,9 @@ const createUser = async (req: Request, res: Response) => {
     const token = generateToken({id});
     res.status(200).send({ token: token });
   } catch (error) {
+    if(error.sqlMessage.includes("for key 'email'")){
+      res.status(500).send({ message: "Email já cadastrado" });
+    }
     res.status(500).send({ message: error.sqlMessage || error.message });
   }
 };

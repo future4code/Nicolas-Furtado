@@ -5,15 +5,15 @@ import { authenticationData } from "../types";
 dotenv.config();
 
 export const generateToken = (payload: authenticationData): string => {
-  return jwt.sign(payload, "meuapp" as string, {
-    expiresIn: "1y",
+  return jwt.sign(payload, process.env.TK_PASSWORD as string, {
+    expiresIn: process.env.TK_EXPIRE_TIME,
   });
 };
 
 export const getTokenData = (token: string): authenticationData => {
   const result: authenticationData = jwt.verify(
     token,
-    "meuapp"
+    process.env.TK_PASSWORD as string
   ) as authenticationData;
   return result;
 };
