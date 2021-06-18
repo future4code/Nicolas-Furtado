@@ -1,28 +1,13 @@
 import { Request, Response } from "express";
-import { connection } from "../../data/connection";
-import { generateId } from "../../middleware/idGenerator";
-import { getTokenData } from "../../middleware/tokenManager";
-import { authenticationData } from "../../model/user/userModel";
+import { createPostBusiness } from "../../business/post/createPostBusiness";
 
 export const createPost = async (req: Request, res: Response) => {
   try {
-    let message = "Success!";
-    
     const { photo, description, type } = req.body;
-    
+
     const token: string = req.headers.authorization as string;
-    
-    const tokenData: authenticationData = getTokenData(token);
 
-    const id: string = generateId();
-
-    await connection("labook_posts").insert({
-      id,
-      photo,
-      description,
-      type,
-      author_id: tokenData.id,
-    });
+    let message = await createPostBusiness(photo, description, type, token);
 
     res.status(201).send({ message });
   } catch (error) {

@@ -1,9 +1,7 @@
-import express, { Express, Request, Response } from "express";
+import express, { Express } from "express";
 import cors from "cors";
-import { signup } from "./controller/user/signup";
-import { login } from "./controller/user/login";
-import { createPost } from "./controller/post/createPost";
-import { getPost } from "./controller/post/getPost";
+import { userRouter } from "./routes/userRouter";
+import { postRouter } from "./routes/postRouter";
 
 const app: Express = express();
 app.use(express.json());
@@ -13,8 +11,5 @@ app.listen(3003, () => {
   console.log("Server running on port 3003");
 });
 
-app.post("/users/signup", signup);
-app.post("/users/login", login);
-
-app.post("/posts/create", createPost);
-app.get("/posts/:id", getPost);
+app.use("/user", userRouter);
+app.use("/post", postRouter);
